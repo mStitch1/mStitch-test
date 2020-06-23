@@ -51,7 +51,7 @@ while(1<2):
 
   if (not entrada):
       print ("Estos son los comandos: \nregistrarme\nparar\nborrar_usuario\nver_usuario")
-      continue # ya lo veía venir : v que hice mal como era que se hacía eso :thinking:
+      continue
 
   if(entrada == "registrarme"):
       # solo te va a pedir si se cumple arriba
