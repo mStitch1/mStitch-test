@@ -1,4 +1,4 @@
-#  Ejemplo 1 de Funciones
+"""#  Ejemplo 1 de Funciones
 def saludar():
   print("Hola")
 saludar()
@@ -43,7 +43,7 @@ ejemplo3("Hola", esto = "es un mensaje")
 
 #  Ejemplo 8()
 
-"""datos= {}
+datos= {}
 entrada = ""
 
 while(entrada != "parar"):
@@ -76,7 +76,7 @@ while (1<2):
   usuario = input("nombre: ")
   contraseña = input("Contraseña: ")
 
-  registrar(usuario, contraseña)"""
+  registrar(usuario, contraseña)
 
 usuarios = {}
 
@@ -94,5 +94,6 @@ usuarios = {}
 def ver_usuarios():
   
   print(usuarios)
-ver_usuarios()
+ver_usuarios()"""
 
+print("Hola GitHub")
