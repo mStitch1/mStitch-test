@@ -112,11 +112,9 @@ def borrar_usuario():
 
 while (1<2):
   entrada = input("¿Que hacemos?: ")
-  if (entrada != "registrarme","ver_usuarios","borrar_usuario","parar"):
-
-      print("Coloca un comando: \nregistrarme\nver_usuario\nborrar_usuario\nparar")
+  if(entrada not in ["registrame","ver_usuarios","borrar_usuario","parar"]):
+      print("Coloca un comando: \nregistrarme\nver_usuarios\nborrar_usuario\nparar")
       continue
-
 
 
   if(entrada == "registrarme"):
