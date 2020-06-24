@@ -139,8 +139,7 @@ while (1<2):
 
 
     contraseña = input("¿Cuál es tu contraseña?: ")
-
-    registrar(nombre, contraseña) #Recuerda el orden <- esto también
+    registrar(nombre, contraseña) #Recuerda el orden 
     print("¡Te has registrado con éxito!")
 
   if(entrada == "parar"):
@@ -149,7 +148,7 @@ while (1<2):
 
 
   if(entrada == "ver_usuarios"):
-      ver_usuarios() # asi ctmr : v si no pones () 
+      ver_usuarios() 
 
 
   elif(entrada == "borrar_usuario"):
