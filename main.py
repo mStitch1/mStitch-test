@@ -41,7 +41,7 @@ def ejemplo3(*args,**kwargs):
 ejemplo3("Hola", esto = "es un mensaje")
 
 
-#  Ejemplo 8
+"""#  Ejemplo 8
 
 datos= {}
 entrada = ""
@@ -80,9 +80,8 @@ while(1<2):
     elif(borrar_usuario in datos):
       del datos[borrar_usuario]
       print("El usuario ha sido borrado con éxito", datos)
+"""  #Ignorar
 
-#entonces que pasa ya lo arreglaste o que 
-# deja aahi
 
 #  Ejemplo 9
 
@@ -90,37 +89,69 @@ usuarios = {}
 entrada = ""
 
 def registrar(nombre, contraseña):
-  if (nombre not in usuarios): #si nombre no está en el diccionario
-    usuarios[nombre] = contraseña #acá le agregas el nombre que quieras
+  if (nombre not in usuarios): 
+    usuarios[nombre] = contraseña
+
+
 def ver_usuarios():
-  print(usuarios)
+  print("Estos son los usuarios registrados -->", usuarios)
+
 
 def borrar_usuario():
-  if(usuario in usuarios):
-    usuario_borrar = input("Cuál quieres borrar?: ")
-    del usuarios[usuario_borrar] #acá según me explicó don mau él dice que si yo 
-    print(usuarios)
+    borrar_usuario = input("Cuál quieres borrar?: ")
 
-while (len(usuarios) < 2):
-  usuario = input("nombre: ") 
-  if(usuario in usuarios):
-    print("Este usuario ya existe")
-    continue
-  if (len(usuario) < 3): #Si len(<- este devuelve la cantidad de letras o items como dice mau) es menor a 3
-    print("tu nombre tiene que tener mas de 3 letras")
-    continue
-  elif(len(usuario) > 15): #entonces si len("") es mayor a 15
-    print("Tu nombre no puede tener más de 15 letras")
-    continue
-  contraseña = input("Contraseña: ")
-  entrada = input("Que hacemos?: ")
 
-  registrar(usuario, contraseña) #Recuerda el orden <- esto también
+    if(borrar_usuario not in usuarios):
+      print("Este usuario no existe")
+
+
+    elif(borrar_usuario in usuarios):
+      del usuarios[borrar_usuario] 
+      print("¡El usuario ha sido borrado con éxito!")
+
+
+while (1<2):
+  entrada = input("¿Que hacemos?: ")
+  if (entrada != "registrarme","ver_usuarios","borrar_usuario","parar"):
+
+      print("Coloca un comando: \nregistrarme\nver_usuario\nborrar_usuario\nparar")
+      continue
+
+
+
+  if(entrada == "registrarme"):
+    nombre = input("¿Cuál es tu nombre?: ")
+
+
+    if(nombre in usuarios):
+        print("Este usuario ya existe")
+        continue
+
+
+    if (len(nombre) < 3):
+        print("Tu nombre debe tener más de 3 carácteres")
+        continue
+
+
+    elif(len(nombre) > 15):
+        print("Tu nombre no puede tener más de 15 carácteres")
+        continue
+
+
+    contraseña = input("¿Cuál es tu contraseña?: ")
+
+    registrar(nombre, contraseña) #Recuerda el orden <- esto también
+    print("¡Te has registrado con éxito!")
+
   if(entrada == "parar"):
-    print("Hemos terminado")
-    break
+      print("¡Hemos terminado!")
+      break
+
+
   if(entrada == "ver_usuarios"):
       ver_usuarios() # asi ctmr : v si no pones () 
+
+
   elif(entrada == "borrar_usuario"):
       borrar_usuario()
 
