@@ -98,7 +98,7 @@ def ver_usuarios():
 
 
 def borrar_usuario():
-    borrar_usuario = input("Cuál quieres borrar?: ")
+    borrar_usuario = input("¿Cuál quieres borrar?: ")
 
 
     if(borrar_usuario not in usuarios):
