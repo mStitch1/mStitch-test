@@ -1,25 +1,32 @@
 import time
 Notas = []
-Ingresar_admin = {"Admin" : 123}
+ingresar_admin = {"Admin" : "math123"}
 
-def borrar_nota():
-	
-	borrar = input("¿Cuál quieres borrar?: ")
-	if borrar in Notas:
-		del Notas[borrar]
-		print("Nota borrada con éxito")
+def borrar_notas():
+	borrar_nombre = input("Ingresa el nombre del estudiante: ")
+	borrar_nota = int(input("Ingresa la nota: "))
+
+	if borrar_nombre in Notas and borrar_nota in Notas:
+		
+		Notas.remove(borrar_nombre)
+		Notas.remove(borrar_nota)
+		print("Nombre del estudiante y la nota han sido eliminadas con éxito.")
+
+		print()
+
 	else:
-		print("Asegúrate que colocaste una nota que ya está.")
+		print("Asegúrate de que colocaste una nota ya asignada.")
+
+		print()
 
 def tiempo_espera():
-	for v in range(1,4):
-		time.sleep(1)
-		print("Registrando...")
+	for x in range(3):
+		print (("Registrando{0}").format("."*x), end="\r")
+		time.sleep(x)
+
 
 def ver_notas():
-	for k,v in Notas():
-		print("Nombre = ", k)
-		print("Nota = ", v)
+	print(Notas)
 
 registrar_nota = True
 
@@ -55,7 +62,9 @@ while registrar_nota:
 		continue 
 
 	elif ingresar_nota.lower() == "no":
-		print("Está bien")
+		print("¡Hasta luego!")
+
+	print()
 
 	registrar_nota = False
 
@@ -63,23 +72,24 @@ while registrar_nota:
 
 		print("Para acceder a más opciones ingresa como administrador")
 		usuario = input("Ingresa tu usuario: ")
-		contraseña = int(input("Ingresa la llave: "))
-		Ingresar_admin[usuario] = contraseña
+		contraseña = input("Ingresa la llave: ")
+		
 		admin = False
+		
+		while(admin == False):
 
-		while not admin:
-
-			if usuario in Ingresar_admin and Ingresar_admin[usuario] == contraseña:
+			if (usuario in ingresar_admin and ingresar_admin[usuario] == contraseña):
 				print("Has accedido como administrador")
-			ver = input("¿Qué quieres hacer?: ")
-			if ver.lower() == "ver_notas":
-				ver_notas()
-				continue
+				ver = input("¿Qué quieres hacer?: ")
 
-			elif ver.lower() == "borrar_notas":
-				borrar_nota()
-				continue	
-				admin = True
-
+				if ver.lower() == "ver notas":
+					ver_notas()
+					
+				elif ver.lower() == "borrar notas":
+					borrar_notas()
+				 
 			else:
-				print("Acceso denegado")
+				print("Acceso denegado")		
+				admin = True
+		
+	
